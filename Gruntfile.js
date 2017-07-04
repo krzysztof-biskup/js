@@ -2,13 +2,19 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+  	
+  	jshint: {
+      all: ['js/*.js']
+    },
+  
+
     sass: {
       options: {
         sourceMap: true
       },
       dist: {
         files: {
-          'style.css': 'styles.sass'
+          'css/style.css': 'sass/styles.sass'
         }
       }
     },
@@ -38,7 +44,11 @@ module.exports = function(grunt) {
 
     browserSync: {
     bsFiles: {
-        src : '*.css'
+        src : [
+                './css/*.css',
+                './*.html',
+                './js/*.js'
+                    ]
     },
     options: {
         server: {
@@ -50,10 +60,11 @@ module.exports = function(grunt) {
   });
   // Load the plugins tasks
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');  
   grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   // Default task(s).
 
-  grunt.registerTask('default', ['sass', 'imagemin', 'watch', 'browserSync']);
+  grunt.registerTask('default', ['sass', 'imagemin', 'browserSync', 'jshint', 'watch']);
 };
