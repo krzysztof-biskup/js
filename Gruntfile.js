@@ -31,8 +31,15 @@ module.exports = function(grunt) {
     },
 
     watch: {
+            styles: {
             files: 'sass/*.sass',
             tasks: ['sass']
+            },
+			scripts: {
+            files: 'js/*.js',
+            tasks: ['jshint']
+            },
+        
         },
         
 
@@ -45,6 +52,7 @@ module.exports = function(grunt) {
                     ]
     },
     options: {
+    	watchTask: true,
         server: {
             baseDir: "./"
         }
@@ -57,9 +65,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin'); 
   grunt.loadNpmTasks('grunt-contrib-jshint'); 
   grunt.loadNpmTasks('grunt-browser-sync');
-  
   grunt.loadNpmTasks('grunt-contrib-watch');
   // Default task(s).
 
-  grunt.registerTask('default', ['sass', 'imagemin', 'jshint', 'browserSync', 'watch']);
+  grunt.registerTask('default', ['sass', 'jshint', 'browserSync', 'watch']);
 };
