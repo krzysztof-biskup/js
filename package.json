@@ -10,18 +10,31 @@
     "type": "git",
     "url": "git+https://github.com/szuwarek1/js.git"
   },
-  "author": "",
+  "author": "Krzysiek",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/szuwarek1/js/issues"
   },
   "homepage": "https://github.com/szuwarek1/js#readme",
   "devDependencies": {
+    "grun": "^0.2.0",
     "grunt": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^2.0.0"
-  }
+  },
+  "dependencies": {
+    "grun": "^0.2.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-sass": "^2.0.0"
+  },
+  "keywords": [
+    "javascript"
+  ]
 }
